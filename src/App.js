@@ -1,26 +1,60 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./style.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      list: [],
+      text: ""
+    };
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.removeItem = this.removeItem.bind(this);
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.setState(prevState => ({
+      list: prevState.list.concat(this.state.text),
+      text: ""
+    }));
+  }
+
+  handleChange(e) {
+    this.setState({
+      text: e.target.value
+    });
+  }
+
+  removeItem(index) {
+    const list = this.state.list;
+    list.splice(index, 1);
+    this.setState({ list });
+  }
+
+  render() {
+    return (
+      <div className="global">
+        <h1> TODO LIST</h1>
+        <form onSubmit={this.handleSubmit}>
+          <input value={this.state.text} onChange={e => this.handleChange(e)} />
+          <button>Add</button>
+          <ol>
+            {this.state.list.map((item, index) => {
+              return (
+                <li key={index}>
+                  {item}
+                  <button onClick={() => this.removeItem(index)}>Delete</button>
+                </li>
+              );
+            })}
+          </ol>
+        </form>
+      </div>
+    );
+  }
 }
+
 
 export default App;
