@@ -3,7 +3,7 @@ FROM node:12.2.0-alpine
 
 # set working directory
 WORKDIR /app
-
+COPY . .
 # add `/app/node_modules/.bin` to $PATH
 ENV PATH /app/node_modules/.bin:$PATH
 
@@ -11,6 +11,10 @@ ENV PATH /app/node_modules/.bin:$PATH
 COPY package.json /app/package.json
 RUN npm install --silent
 RUN npm install react-scripts@3.0.1 -g --silent
-
+RUN npm run build --production
+RUN npm install -g serve
 # start app
-CMD ["npm", "start"]
+#CMD ["npm", "start"]
+CMD serve -s build
+
+EXPOSE 5000
