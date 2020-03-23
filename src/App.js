@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./style.css";
+import "./App.css";
 
 class App extends Component {
   constructor(props) {
@@ -35,17 +35,23 @@ class App extends Component {
 
   render() {
     return (
+      
       <div className="global">
-        <h1> TODO LIST</h1>
+      
+        <h1> Bem-Vindo!</h1>
+        <h3> {new Date().toLocaleDateString()}</h3>
+        <h2> NOTAS </h2>
         <form onSubmit={this.handleSubmit}>
-          <input value={this.state.text} onChange={e => this.handleChange(e)} />
-          <button>Add</button>
+          <input class="css-input" value={this.state.text} onChange={e => this.handleChange(e)} />
+           <a class="myButton">ADD</a>
           <ol>
             {this.state.list.map((item, index) => {
               return (
                 <li key={index}>
                   {item}
-                  <button onClick={() => this.removeItem(index)}>Delete</button>
+                  
+
+                  <button  class="buttonDelete" onClick={() => this.removeItem(index)}>Delete</button>
                 </li>
               );
             })}
@@ -54,6 +60,8 @@ class App extends Component {
       </div>
     );
   }
+  
+
 }
 
 
