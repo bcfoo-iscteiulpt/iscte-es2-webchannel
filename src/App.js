@@ -39,9 +39,9 @@ class App extends Component {
         <h1> Bem-Vindo!</h1>
         <h3> {new Date().toLocaleDateString()}</h3>
         <div className="padded">
-          {/*Dar algum espaço entre o conteudo central e as margens do ecrã, padding prop do css*/}
+          {/*Dar algum espaço entre o conteudo central e as margens do ecrã, padding prop do css FEITO*/}
           <h2> NOTAS </h2>
-          <form onSubmit={this.handleSubmit}>
+          <form className="marginRight" onSubmit={this.handleSubmit}>
             {/*Dar uma margem entre a caixa de input e o butão, margin-right prop do css*/}
             {/*Aumentar o tamanho da caixa de texto na qual o user escreve a nota
             OU tornar a caixa responsiva de modo a adaptar-se ao texto que esta nela*/}
