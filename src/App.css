@@ -1,4 +1,5 @@
 .global {
+  
   min-height: 100%;
   min-width: 1024px;
 
@@ -7,7 +8,7 @@
   height: auto;
 
   
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   z-index: -1;
@@ -25,6 +26,22 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#240014",endCo
   background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#3f5efb",endColorstr="#fc466b",GradientType=1);
  */
+}
+.text {
+  background-color: rgba(252, 252, 252, 0.692);
+  color: black;
+  font-size: 9vw; /* Responsive font size */
+  font-weight: bold;
+  margin: 0 auto; /* Center the text container */
+  padding: 10px;
+  width: 50%;
+  text-align: center; /* Center text */
+  position: absolute; /* Position text */
+  top: 10%; /* Position text in the middle */
+  left: 50%; /* Position text in the middle */
+  transform: translate(-50%, -50%); /* Position text in the middle */
+  mix-blend-mode: screen; /* This makes the cutout text possible */
+  
 }
 
  h1 {
@@ -46,7 +63,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#240014",endCo
 h2 {
   color: black;
   text-align: left;
-  font-size: 2vw;
+  font-size: 3vw;
 }
 
 h3 {
@@ -68,7 +85,7 @@ h3 {
 	cursor:pointer;
 	color:#ffffff;
 	font-family:Arial;
-	font-size:15px;
+	font-size:19px;
 	font-weight:bold;
 	padding:8px 24px;
 	text-decoration:none;
@@ -134,12 +151,26 @@ h3 {
 */
 
 .padded{
-
+  
   border: 1px solid rgba(21, 19, 129, 0.582);
   background-color: rgba(173, 216, 230, 0.418);
   padding-top: 50px;
   padding-right: 30px;
   padding-bottom: 50px;
   padding-left: 80px;
+  
+  
 }
 
+.list {
+  
+  color: rgb(255, 254, 254);
+  font-size: 2vw;
+  border: 1px solid rgba(21, 19, 129, 0.26);
+  background-color: rgba(59, 108, 131, 0.349);
+  padding-top: 50px;
+  padding-right: 30px;
+  padding-bottom: 50px;
+  padding-left: 80px;
+  margin-top: 20px;
+}
