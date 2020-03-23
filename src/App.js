@@ -40,17 +40,17 @@ class App extends Component {
       
         <h1> Bem-Vindo!</h1>
         <h3> {new Date().toLocaleDateString()}</h3>
+       
         <h2> NOTAS </h2>
         <form onSubmit={this.handleSubmit}>
           <input class="css-input" value={this.state.text} onChange={e => this.handleChange(e)} />
-           <a class="myButton">ADD</a>
+           <button class="myButton">ADD</button>
           <ol>
             {this.state.list.map((item, index) => {
               return (
                 <li key={index}>
                   {item}
                   
-
                   <button  class="buttonDelete" onClick={() => this.removeItem(index)}>Delete</button>
                 </li>
               );
