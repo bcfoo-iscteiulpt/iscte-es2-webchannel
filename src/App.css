@@ -61,7 +61,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#240014",endCo
 }
 
 h2 {
-  color: black;
+  color: rgb(255, 255, 255);
   text-align: left;
   font-size: 3vw;
 }
