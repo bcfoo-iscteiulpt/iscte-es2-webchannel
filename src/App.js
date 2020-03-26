@@ -49,7 +49,7 @@ function AppContainer(){
   const [list, setList ] = useState([]);
   // const [shouldQuery, setShouldQuery] = useState(false)
 
-  const { loading, error, data } = useFetch('http://46.101.158.75:8091/notes', {}, [])
+  const { loading, error, data } = useFetch('http://46.101.158.75/java_restful/notes', {}, [])
   if(data && data !== list) {
     setList(data)
   }
